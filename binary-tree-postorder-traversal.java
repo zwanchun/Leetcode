@@ -22,6 +22,8 @@ Note: Recursive solution is trivial, could you do it iteratively?
  *     TreeNode(int x) { val = x; }
  * }
  */
+ 
+ //non-recursive
 public class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> rst=new ArrayList<Integer>();
@@ -60,3 +62,17 @@ public class Solution {
         
     }
 }
+
+//recursive
+public List<Integer> postOrderRecursion(TreeNode root){
+		List<Integer> rst=new ArrayList<Integer>();
+		traversePostOrder(root,rst);
+		return rst;
+	}
+	
+	private void traversePostOrder(TreeNode root, List<Integer> postorder){
+		if(root==null) return;
+		traversePostOrder(root.left,postorder);
+		traversePostOrder(root.right,postorder);
+		postorder.add(root.val);
+	}
