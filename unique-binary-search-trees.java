@@ -34,6 +34,7 @@ public class Solution {
         res[1]=1;
         for(int i=2;i<=n;i++){
             for(int j=0;j<i;j++){
+                //如果左子树的个数为j，那么右子树为i - j - 1
                 res[i]+=res[j]*res[i-j-1];
             }
         }
