@@ -25,3 +25,26 @@ public class Solution {
 }
 
 //Reference: https://segmentfault.com/a/1190000003768716
+
+public class Solution {
+    /**
+     * @param nums an integer array
+     * @return nothing, do this in-place
+     */
+    public void moveZeroes(int[] nums) {
+        // Write your code here
+        if(nums==null||nums.length==0||nums.length==1) return;
+        
+        int i=0,j=0;
+        for(i=0;i<nums.length;i++){
+            if(nums[i]!=0){
+                if(i!=j){
+                    nums[j]=nums[i];
+                    nums[i]=0;
+                }
+                j++;
+            }
+        }
+    }
+}
+
