@@ -5,7 +5,8 @@ If you were only permitted to complete at most one transaction (ie, buy one and 
 */
 
 /* use a variable to store min price
-use DP to compute max profit*/
+use DP to compute max profit
+run time: O(n)*/
 
 public class Solution {
     public int maxProfit(int[] prices) {
