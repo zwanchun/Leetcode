@@ -12,7 +12,8 @@ maxProfit = 3
 transactions = [buy, sell, cooldown, buy, sell]
 */
 
-/*solution: https://leetcode.com/discuss/71354/share-my-thinking-process*/
+/*solution: https://leetcode.com/discuss/71354/share-my-thinking-process
+http://www.cnblogs.com/grandyang/p/4997417.html*/
 
 
 public class Solution {
