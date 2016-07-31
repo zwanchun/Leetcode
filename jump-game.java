@@ -14,6 +14,7 @@ A = [3,2,1,0,4], return false.
 /*solution:
 http://www.acmerblog.com/leetcode-solution-jump-game-6217.html
 过每个index查看能到的最远的index，若当前最远的比遍历index还小或者相等时就走不下去了。
+runtime: O(N)
 */
 
 public class Solution {
