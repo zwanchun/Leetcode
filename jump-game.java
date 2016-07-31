@@ -12,9 +12,14 @@ A = [3,2,1,0,4], return false.
 */
 
 /*solution:
+(1) Greedy:
 http://www.acmerblog.com/leetcode-solution-jump-game-6217.html
 过每个index查看能到的最远的index，若当前最远的比遍历index还小或者相等时就走不下去了。
 runtime: O(N)
+
+(2) Dynamic Programming:
+f[i]表示走到第A[i]时, 多余的最大步数。 f[i] = max(f[i-1], A[i-1])-1
+ending condition: dp[n-1]>=0
 */
 
 public class Solution {
