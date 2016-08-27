@@ -44,3 +44,7 @@ public class Solution {
         
     }
 }
+
+/*solution 2: perfect square = 1+3+5+7....
+https://zh.wikipedia.org/wiki/%E5%B9%B3%E6%96%B9%E6%95%B0
+*/
