@@ -27,7 +27,7 @@ public class Solution {
         }
         
         for(int i=0;i<nums.length;i++){
-            //排列的时候把sort后的array中相同的index较大的element放在前面
+            //先对数组进行排序，这样在DFS的时候，可以先判断前面的一个数是否和自己相等，相等的时候则前面的数必须使用了，自己才能使用，这样就不会产生重复的排列了。
             if(visit[i]||i!=0&&visit[i-1]&&nums[i]==nums[i-1]){
                 continue;
             }
