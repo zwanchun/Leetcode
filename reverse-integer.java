@@ -16,6 +16,9 @@ Did you notice that the reversed integer might overflow? Assume the input is a 3
 For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 
 */
+
+
+/*负数模10为负数，-1/10=0*/
 public class Solution {
     public int reverse(int x) {
         int rst=0;
