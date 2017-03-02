@@ -37,3 +37,26 @@ public class Solution {
         return max;
     }
 }
+
+
+/*http://www.cnblogs.com/yuzhangcmu/p/4188973.html*/
+/*O(N)*/
+public class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        if(s==null||s.length()==0) return 0;
+        int max_length=0;
+        Map<Character,Integer> map=new HashMap<Character,Integer>();
+        int left=0;
+        for(int i=0;i<s.length();i++){
+            if(map.containsKey(s.charAt(i))&&map.get(s.charAt(i))>=left){
+                left=map.get(s.charAt(i))+1;
+            }
+            map.put(s.charAt(i),i);
+            max_length=Math.max(max_length,i-left+1);
+        }
+        
+        return max_length;
+        
+    }
+}
+
