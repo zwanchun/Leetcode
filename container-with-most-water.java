@@ -27,3 +27,26 @@ public class Solution {
         return (right-left)*Math.min(height[left], height[right]);
     }
 }
+/*思路是从两头到中间扫描，设i,j分别指向height数组的首尾。
+那么当前的area是min(height[i],height[j]) * (j-i)。
+当height[i] < height[j]的时候，我们把i往后移，否则把j往前移，直到两者相遇。
+
+这个正确性如何证明呢？
+代码里面的注释说得比较清楚了，即每一步操作都能保证当前位置能取得的最大面积已经记录过了，而最开始初始化的时候最大面积记录过，所以有点类似于数学归纳法，证明这个算法是正确的。*/
+
+public class Solution {
+    public int maxArea(int[] height) {
+        if(height==null||height.length<2) return 0;
+        int i=0,j=height.length-1;
+        int max_area=0;
+        while(i<j){
+        	max_area=Math.max(max_area,Math.min(height[i],height[j])*(j-i));
+        	if(height[i]<height[j]) i++;
+        	else j--;
+        }
+
+        return max_area;
+        
+        
+    }
+}
