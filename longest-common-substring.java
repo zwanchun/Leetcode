@@ -40,6 +40,13 @@ http://www.code123.cc/docs/leetcode-notes/string/longest_common_substring.html
 https://lefttree.gitbooks.io/leetcode/content/dynamicProgramming2/longestCommonSubstring.html
 */
 
+
+
+
+/*runtime: O(n*m)
+space:O(n*m)
+*/
+
 public class Solution {
     /**
      * @param A, B: Two string.
