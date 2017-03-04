@@ -34,3 +34,40 @@ public class Solution {
         
     }
 }
+
+
+public class Solution {
+    /**
+     * @param strs: A list of strings
+     * @return: A list of strings
+     */
+    public List<String> anagrams(String[] strs) {
+        // write your code here
+        List<String> rst=new ArrayList<String>();
+        if(strs==null||strs.length==0) return rst;
+        
+        Map<String,List<String>> map=new HashMap<String,List<String>>();
+        
+        for(int i=0;i<strs.length;i++){
+            char[] tmp=strs[i].toCharArray();
+            Arrays.sort(tmp);
+            String str=new String(tmp);
+            if(map.containsKey(str)) map.get(str).add(strs[i]);
+            else{
+                List<String> list=new ArrayList<String>();
+                list.add(strs[i]);
+                map.put(str,list);
+            }
+        }
+        
+        for(String str:map.keySet()){
+            if(map.get(str).size()>1){
+                 rst.addAll(map.get(str));
+            }
+        }
+        
+        return rst;
+        
+        
+    }
+}
