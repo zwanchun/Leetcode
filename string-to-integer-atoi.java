@@ -47,3 +47,39 @@ public class Solution {
         
     }
 }
+
+
+public class Solution {
+    public int myAtoi(String str) {
+        if(str==null) return 0;
+        str=str.trim();
+        if(str.length()==0) return 0;
+        int sign=1;
+        if(str.charAt(0)=='+'){
+            str=str.substring(1,str.length());
+        }
+        else if(str.charAt(0)=='-'){
+            sign=-1;
+            str=str.substring(1,str.length());
+        }
+        
+        if(str.length()==0||str.charAt(0)<'0'||str.charAt(0)>'9') return 0;
+     
+        
+        long rst=0;
+       
+        for(int i=0;i<str.length();i++){
+            char tmp=str.charAt(i);
+            if(tmp>='0'&&tmp<='9'){
+                rst=rst*10+tmp-'0';
+            }
+            else return sign*(int)rst;
+            
+            if(sign*rst>Integer.MAX_VALUE) return Integer.MAX_VALUE;
+            if(sign*rst<Integer.MIN_VALUE) return Integer.MIN_VALUE;
+        }
+        
+        return sign*(int)rst;
+        
+    }
+}
