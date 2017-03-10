@@ -22,3 +22,26 @@ public class Solution {
         return nums[left];
     }
 }
+
+
+public class Solution {
+    /**
+     * @param nums: a rotated sorted array
+     * @return: the minimum number in the array
+     */
+    public int findMin(int[] nums) {
+        // write your code here
+        if(nums==null||nums.length==0) return Integer.MIN_VALUE;
+        int start=0, end=nums.length-1;
+        int pivot=nums[0];
+        if(pivot<=nums[nums.length-1]) return pivot;
+        while(start+1<end){
+            int mid=start+(end-start)/2;
+            if(nums[mid]>=pivot) start=mid;
+            else end=mid;
+        }
+        
+        if(nums[start]<nums[end]) return nums[start];
+        else return nums[end];
+    }
+}
