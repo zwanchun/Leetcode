@@ -40,3 +40,40 @@ public class Solution {
         return false;
     }
 }
+
+
+
+public class Solution {
+    /**
+     * @param matrix, a list of lists of integers
+     * @param target, an integer
+     * @return a boolean, indicate whether matrix contains target
+     */
+    public boolean searchMatrix(int[][] matrix, int target) {
+        // write your code here
+        if(matrix==null||matrix.length==0||matrix[0].length==0) return false;
+        int m=matrix.length;
+        int n=matrix[0].length;
+        if(target<matrix[0][0]||target>matrix[m-1][n-1]) return false;
+        int i=0;
+        for(;i<m;i++){
+            if(target>matrix[i][n-1]) continue;
+            else break;
+            
+        }
+        
+        int left=0, right=n-1;
+        while(left+1<right){
+            int mid=left+(right-left)/2;
+            if(matrix[i][mid]==target) return true;
+            else if(matrix[i][left]<target) left=mid;
+            else right=mid;
+        }
+        
+        if(matrix[i][left]==target) return true;
+        if(matrix[i][right]==target) return true;
+        
+        return false;
+    }
+}
+
