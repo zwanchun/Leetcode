@@ -6,6 +6,8 @@ Given 1->2->3->4->5->NULL and k = 2,
 return 4->5->1->2->3->NULL.
 */
 
+/* another solution: http://fisherlei.blogspot.com/2013/01/leetcode-rotate-list.html*/
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
